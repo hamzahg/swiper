@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: February 8, 2020
+ * Released on: February 12, 2020
  */
 
 /**
@@ -940,7 +940,7 @@ const Utils = {
 const Support = (function Support() {
   return {
     touch: (win.Modernizr && win.Modernizr.touch === true) || (function checkTouch() {
-      return !!((win.navigator.maxTouchPoints > 0) || ('ontouchstart' in win) || (win.DocumentTouch && doc instanceof win.DocumentTouch));
+      return (('ontouchstart' in win)|| (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
     }()),
 
     pointerEvents: !!win.PointerEvent && ('maxTouchPoints' in win.navigator) && win.navigator.maxTouchPoints > 0,
